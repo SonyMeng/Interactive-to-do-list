@@ -1,52 +1,51 @@
-// Function to add a task
+//Things to do
+//create new task function
+//li with checkbox and delete button
+//checkbox makes text style line-through or none
+//delete btn
+//clear all btn
+
 function addTask() {
-    const taskInput = document.getElementById('newTask');
-    const taskText = taskInput.value.trim();
-  
-    if (taskText === '') return; // Don't add empty tasks
-  
-    const taskList = document.getElementById('myList');
-    const taskItem = document.createElement('li');
-    taskItem.className = 'task-item'; // Apply the class
-  
-    // Create a checkbox to mark the task as complete
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.addEventListener('change', () => {
-      taskItem.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
-    });
-  
-    // Create a button to delete the task
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete';
-    deleteButton.addEventListener('click', () => {
-      taskList.removeChild(taskItem);
-    });
-  
-    // Append the checkbox, task text, and delete button to the task item
-    taskItem.appendChild(checkbox);
-    taskItem.appendChild(document.createTextNode(` ${taskText} `));
-    taskItem.appendChild(deleteButton);
-  
-    // Append the task item to the task list
-    taskList.appendChild(taskItem);
-  
-    // Clear the task input
-    taskInput.value = '';
-  }
-  
-  // Function to clear all tasks
-  function clearAllTasks() {
-    const taskList = document.getElementById('myList');
-    taskList.innerHTML = '';
-  }
-  
-  // Event listeners for the buttons
-  document.getElementById('addButton').addEventListener('click', addTask);
-  document.getElementById('clearAllButton').addEventListener('click', clearAllTasks);
-  
-  // Optional: Add an event listener to add a task when pressing Enter
-  document.getElementById('newTask').addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') addTask();
+  let taskValue = document.getElementById("newTask");
+  taskValue = taskValue.value.trim();
+
+  if (taskValue == "") return;
+
+  let taskList = document.getElementById("myList");
+  let taskListItem = document.createElement("li");
+  taskListItem.classList.add("task-item");
+
+  let spanElement = document.createElement("span");
+  spanElement.classList.add("task-text");
+  spanElement.innerText = taskValue;
+
+  let checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.classList.add("checkBox");
+  checkBox.addEventListener("change", function () {
+    spanElement.style.textDecoration = checkBox.checked
+      ? "line-through"
+      : "none";
   });
-  
+
+  let deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+  deleteButton.classList.add("deleteButton");
+  deleteButton.addEventListener("click", () => {
+    taskList.removeChild(taskListItem);
+  });
+
+  taskListItem.appendChild(checkBox);
+  taskListItem.appendChild(spanElement);
+  taskListItem.appendChild(deleteButton);
+
+  taskList.appendChild(taskListItem);
+  document.getElementById("newTask").value = "";
+}
+function clearAll() {
+  const taskList = document.getElementById("myList");
+  taskList.innerHTML = "";
+}
+
+document.getElementById("clearAllButton").onclick = clearAll;
+document.getElementById("addTaskButton").onclick = addTask;

@@ -27,81 +27,102 @@ h1 {
   grid-template-columns: 1fr 2fr;
 }
 
-.inputArea ,.taskListArea {
+.inputArea,
+.taskListArea {
   background-color: #1b263b;
   border: solid #1b263b 3px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height:600px;
-  padding:10px;
+  padding: 10px;
 }
 
-.inputArea{
-    margin: 30px 30px 30px 50px;
+.inputArea {
+  margin: 30px 30px 30px 50px;
+  height: 150px;
 }
 
 .taskListArea {
-    margin: 30px 50px 30px 30px;
+  margin: 30px 50px 30px 30px;
+  height: 600px;
 }
 
-#inputAreaTitle ,#taskListAreaTitle {
+#inputAreaTitle,
+#taskListAreaTitle {
   font-size: 3vh;
   padding: 10px;
   text-align: center;
 }
 
-.inputButtons{
-    display: flex;
-    justify-content: space-around;
+.inputButtons {
+  display: flex;
+  justify-content: space-around;
 }
 
-button{
-    font-size: 15px;
-    padding: 3px;
-    border-radius: 5px;
-    margin-top: 5px;
-    border: #1C6E8C;
-    width: 45%;
+.inputButtons button {
+  font-size: 15px;
+  padding: 3px;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: #1c6e8c;
+  width: 45%;
 }
 
-#addButton{
-    background-color: greenyellow;
-    color:green;
+#addTaskButton {
+  background-color: greenyellow;
+  color: green;
 }
 
-#clearAllButton{
-    background-color: red;
-    color:black;
+#clearAllButton {
+  background-color: red;
+  color: black;
 }
 
-.inputField{
-    padding: 5px;
-    border-radius: 5px;
-    border: #1C6E8C;
+.inputField {
+  padding: 5px;
+  border-radius: 5px;
+  border: #1c6e8c;
 }
 
-#addButton:hover{
+#addTaskButton:hover {
   background-color: green;
-    color:greenyellow;
+  color: greenyellow;
 }
 
-#clearAllButton:hover{
+#clearAllButton:hover {
   background-color: orangered;
-  color:white;
+  color: white;
 }
 
-#addButton:active,#clearAllButton:active{
+#addTaskButton:active,
+#clearAllButton:active {
   background-color: #14213d;
 }
 
 .task-item {
-  padding: 5px;
+  padding: 8px 5px 5px 2px;
   border-radius: 5px;
-  background-color: #1b263b;
+  background-color: #778da9;
   margin: 10px 0;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  line-height: 25px;
+}
+
+.deleteButton {
+  background-color: red;
+  color: black;
+  font-size: 15px;
+  padding: 3px;
+  border-radius: 5px;
+  border: #1c6e8c;
+  width: 30%;
+  margin-left: 5px;
+}
+
+.checkBox {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 @media (max-width: 600px) {
@@ -109,11 +130,12 @@ button{
     grid-template-columns: 1fr;
   }
 
-  .inputArea, .taskListArea {
+  .inputArea,
+  .taskListArea {
     margin: 15px;
   }
 
-  button {
+  .inputButtons button {
     width: 90%;
   }
 }
