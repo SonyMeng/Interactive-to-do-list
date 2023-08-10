@@ -10,8 +10,8 @@
     <h1>To do List</h1>
     <div class="container">
       <div class="inputArea">
-        <p id="inputAreaTitle">Add new Task</p>
-        <input class ="inputField" type="text" placeholder="New task..." />
+        <label id="inputAreaTitle" for=""newTask>Add new Task</label>
+        <input id="newTask" class ="inputField" type="text" placeholder="New task..." />
         <div class="inputButtons">
         <button id="addButton">Add</button>
         <button id="clearAllButton">Clear All</button>
@@ -19,6 +19,8 @@
       </div>
       <div class="taskListArea">
         <p id="taskListAreaTitle">My Task List</p>
+        <ol id="myList">
+        </ol>
       </div>
     </div>
     <script src="script.js"></script>

@@ -24,7 +24,7 @@ h1 {
 
 .container {
   display: grid;
-  grid-template-columns: 35% 66%;
+  grid-template-columns: 1fr 2fr;
 }
 
 .inputArea ,.taskListArea {
@@ -79,4 +79,41 @@ button{
     padding: 5px;
     border-radius: 5px;
     border: #1C6E8C;
+}
+
+#addButton:hover{
+  background-color: green;
+    color:greenyellow;
+}
+
+#clearAllButton:hover{
+  background-color: orangered;
+  color:white;
+}
+
+#addButton:active,#clearAllButton:active{
+  background-color: #14213d;
+}
+
+.task-item {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #1b263b;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .inputArea, .taskListArea {
+    margin: 15px;
+  }
+
+  button {
+    width: 90%;
+  }
 }
